@@ -100,7 +100,7 @@ flask-render-example/
 
 ## 🛠️ Stack Tecnológico
 
-- **Backend**: Flask 2.3.3 (Python)
+- **Backend**: Flask 3.1.1 (Python)
 - **Frontend**: HTML5, CSS3, Bootstrap 5.3.0
 - **Iconos**: Font Awesome 6.4.0
 - **Servidor**: Gunicorn (producción)
