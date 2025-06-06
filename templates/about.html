@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Acerca de - TaskMaster{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2 class="mb-0">
+                    <i class="fas fa-info-circle text-primary me-2"></i>
+                    Acerca de TaskMaster
+                </h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="fas fa-tasks fa-4x text-primary mb-3"></i>
+                        <h4>Simple</h4>
+                        <p class="text-muted">Interfaz limpia y fácil de usar</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="fas fa-bolt fa-4x text-warning mb-3"></i>
+                        <h4>Rápido</h4>
+                        <p class="text-muted">Agrega y gestiona tareas al instante</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="fas fa-mobile-alt fa-4x text-success mb-3"></i>
+                        <h4>Responsive</h4>
+                        <p class="text-muted">Funciona en todos los dispositivos</p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="text-center">
+                    <h4 class="mb-3">Sobre esta aplicación</h4>
+                    <p class="lead">
+                        TaskMaster es una aplicación simple para gestión de tareas construida con Flask.
+                        Te permite agregar, completar y eliminar tareas de manera sencilla.
+                    </p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-code text-primary me-2"></i>Tecnologías
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fab fa-python me-2"></i>Python & Flask</li>
+                                        <li><i class="fab fa-html5 me-2"></i>HTML5</li>
+                                        <li><i class="fab fa-css3-alt me-2"></i>CSS3 & Bootstrap</li>
+                                        <li><i class="fab fa-js me-2"></i>JavaScript</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-star text-warning me-2"></i>Características
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-plus me-2"></i>Agregar tareas</li>
+                                        <li><i class="fas fa-check me-2"></i>Marcar como completadas</li>
+                                        <li><i class="fas fa-trash me-2"></i>Eliminar tareas</li>
+                                        <li><i class="fas fa-eye me-2"></i>Vista organizada</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Volver al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

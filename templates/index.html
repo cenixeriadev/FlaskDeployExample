@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - TaskMaster{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <h1 class="card-title">
+                    <i class="fas fa-tasks text-primary me-2"></i>
+                    Bienvenido a TaskMaster
+                </h1>
+                <p class="card-text lead">Organiza tus tareas de manera simple y eficiente</p>
+                <a href="{{ url_for('agregar_tarea') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-plus me-2"></i>Agregar Nueva Tarea
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">
+                    <i class="fas fa-list me-2"></i>Mis Tareas
+                </h3>
+                <span class="badge bg-primary rounded-pill">{{ tareas|length }} tareas</span>
+            </div>
+            <div class="card-body">
+                {% if tareas %}
+                    <div class="row">
+                        {% for tarea in tareas %}
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="card h-100 {% if tarea.completada %}border-success{% else %}border-warning{% endif %}">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="card-title {% if tarea.completada %}text-decoration-line-through text-muted{% endif %}">
+                                            {{ tarea.titulo }}
+                                        </h5>
+                                        <span class="badge {% if tarea.completada %}bg-success{% else %}bg-warning{% endif %}">
+                                            {% if tarea.completada %}
+                                                <i class="fas fa-check"></i> Completada
+                                            {% else %}
+                                                <i class="fas fa-clock"></i> Pendiente
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                    <p class="card-text flex-grow-1 {% if tarea.completada %}text-muted{% endif %}">
+                                        {{ tarea.descripcion }}
+                                    </p>
+                                    <div class="mt-auto">
+                                        <div class="btn-group w-100" role="group">
+                                            <a href="{{ url_for('completar_tarea', tarea_id=tarea.id) }}" 
+                                               class="btn {% if tarea.completada %}btn-outline-warning{% else %}btn-outline-success{% endif %} btn-sm">
+                                                <i class="fas fa-{% if tarea.completada %}undo{% else %}check{% endif %}"></i>
+                                                {% if tarea.completada %}Desmarcar{% else %}Completar{% endif %}
+                                            </a>
+                                            <a href="{{ url_for('eliminar_tarea', tarea_id=tarea.id) }}" 
+                                               class="btn btn-outline-danger btn-sm"
+                                               onclick="return confirm('¿Estás seguro de que quieres eliminar esta tarea?')">
+                                                <i class="fas fa-trash"></i> Eliminar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No hay tareas aún</h4>
+                        <p class="text-muted">¡Comienza agregando tu primera tarea!</p>
+                        <a href="{{ url_for('agregar_tarea') }}" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Agregar Tarea
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
