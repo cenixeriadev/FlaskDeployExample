@@ -1,5 +1,8 @@
 # 📋 TaskMaster - Ejemplo de Despliegue Flask
-
+![Flask](https://img.shields.io/badge/Flask-2.3.3-green)
+![Python](https://img.shields.io/badge/Python-3.13+-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple)
+![Deploy](https://img.shields.io/badge/Deploy-Render.com-blueviolet)
 ## Video del aplicativo
 
 
@@ -16,10 +19,6 @@ https://github.com/user-attachments/assets/bf058dc8-aec2-43be-8f7f-0ffb2a427320
 
 **Aplicación de ejemplo** para demostrar cómo crear y desplegar una aplicación Flask básica en Render.com. Incluye gestión simple de tareas con una interfaz moderna usando Bootstrap.
 
-![Flask](https://img.shields.io/badge/Flask-2.3.3-green)
-![Python](https://img.shields.io/badge/Python-3.13+-blue)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple)
-![Deploy](https://img.shields.io/badge/Deploy-Render.com-blueviolet)
 
 ## 🎯 Propósito del Ejemplo
 
